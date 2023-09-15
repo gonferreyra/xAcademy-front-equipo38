@@ -6,19 +6,23 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-    canActivate:[AuthJwtGuard]
+    //canActivate:[AuthJwtGuard]
   },
   {
     path: 'login',
     loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule),
   },
   {
-    path: 'cursos',
-    loadChildren: () => import('./modules/cursos/cursos.module').then(m => m.CursosModule),
+    path: 'home',
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./modules/create-cv/create-cv.module').then(m => m.CreateCvModule),
   },
   {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'home'
   }
 ];
 

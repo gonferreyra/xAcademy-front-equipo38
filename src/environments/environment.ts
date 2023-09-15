@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://api.escuelajs.co/api/v1/auth/',
+  API_URL: 'localhost:3000',
   TOKEN:"access_token"
 };
 
