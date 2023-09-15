@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './core/http/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AngularResizeEventModule } from 'angular-resize-event';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularResizeEventModule
    ],
   providers: [ApiService],
   bootstrap: [AppComponent]

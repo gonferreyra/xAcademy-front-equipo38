@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
   },
   {
+    path: 'create',
+    loadChildren: () => import('./modules/create-cv/create-cv.module').then(m => m.CreateCvModule),
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

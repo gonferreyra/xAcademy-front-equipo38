@@ -6,14 +6,19 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <header class="header">
+  <header (resized)="onResized($event)" class="header">
     <div class="brand">
     <img src="../../../assets/test-svgrepo-com.svg">
 		<h1 class="logo">Generate your CV</h1>
+    <div class="hamb-button" [ngSwitch]="menu">
+      <img class="hamb-icon" src="../../../assets/icons8-menu-50.png" (click)="change()" *ngSwitchCase="'menu'">
+      <img class="hamb-icon" src="../../../assets/closed.svg" (click)="change()" *ngSwitchCase="'cross'">
+      </div>
     </div>
-      <ul class="main-nav">
+    
+      <ul *ngIf="closed" class="main-nav">
           <li><a href="/home">Home</a></li>
-          <li><a href="#">Create +</a></li>
+          <li><a href="/create">Create +</a></li>
           <li><a href="#">About</a></li>
           <li><a href="/login">Login</a></li>
           <li><a href="#">Register</a></li>
