@@ -29,3 +29,20 @@ p{
                 blink-caret .5s step-end infinite alternate;
     }
   
+    /* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media only screen and (min-width: 769px) {
+	p{
+    text-align:left;
+  
+  }
+  .animation {
+  margin: 1em 5em 3em 0em;
+   
+  }
+}

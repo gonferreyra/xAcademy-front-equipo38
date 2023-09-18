@@ -1,13 +1,13 @@
 body{
   background-color: lightgrey;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .container{
   margin: auto;
   background-color: white;
   width: 500px;
-  padding: 30px;
+  /*padding: 30px;*/
 }
 
 ul, li {
@@ -36,7 +36,7 @@ ul.slider li {
 ul.slider li img{
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 ul.slider li:first-child {
