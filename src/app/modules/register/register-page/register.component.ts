@@ -3,47 +3,49 @@ import { UntypedFormBuilder,UntypedFormControl,UntypedFormGroup, Validators } fr
 import { ApiService } from '../../../core/http/api.service';
 import { environment } from '../../../../environments/environment'
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   form:UntypedFormGroup;
   email = new UntypedFormControl('', [Validators.required,Validators.email]);
-  password = new UntypedFormControl('', [Validators.required]);
+  password = new UntypedFormControl('', [Validators.required, Validators.min(8)]);
+  repassword = new UntypedFormControl('', [Validators.required, Validators.min(8)]);
   token:string = "";
   ErrAuth:boolean = false;
-
+  ErrMatch:boolean = false;
   constructor(public api : ApiService,private formBuilder: UntypedFormBuilder) { 
     this.form = this.formBuilder.group({
       email:this.email,
       password:this.password,
+      repassword:this.repassword
     });
   }
   ngOnInit() {
   this.form.valueChanges.subscribe({
     next: formValue => {
-       
-    }
+      
+        if(formValue.password !== formValue.repassword){
+            this.ErrMatch = true ;
+        }
+        else{
+            this.ErrMatch = false ;
+        }
+          } 
     });
   }
 
-  login() {
+  register() {
     let FormRaw = this.form.getRawValue();
     
-    this.api.post("login/",FormRaw).subscribe({
+    this.api.post("register/",FormRaw).subscribe({
            next: (data:any) =>{
             this.ErrAuth = false ;
-            if (typeof data === "object" && data && environment.TOKEN in data && typeof data[environment.TOKEN] === "string"){
-              this.token = data[environment.TOKEN];
-              console.log(this.token);
-              localStorage.setItem("Token",<string>this.token)
-        }
-           
           },
            error: err =>{this.ErrAuth = true ; },
       });
     
   }
-
+  
 }
