@@ -1,0 +1,46 @@
+<div class="container">
+    <app-sidebar></app-sidebar>
+    <form class="data" [formGroup]="form">
+      <div class="data-field" >
+        <label for="position">Position</label>
+        <input type="text" name="position" formControlName="position" />
+      </div>
+      <div class="data-field">
+        <label for="startDate">StartDate</label>
+        <input type="text" name="startDate" formControlName="startDate" />
+      </div>
+      <div class="data-field"> 
+        <label for="finishDate">Finish Date</label> 
+        <input type="text" name="finishDate" formControlName="finishDate" /> 
+        </div>
+        <div class="data-field"> 
+            <label for="companyName">Company Name</label> 
+            <input type="text" name="companyName" formControlName="companyName" /> 
+        </div>
+        <div class="data-field"> 
+            <label for="description">Description</label> 
+            <input type="text" name="description" formControlName="description" /> 
+        </div>
+
+      <div *ngIf="ErrForm" class="msjError">Form invalid</div>
+      <div class="btn-container">
+        <button (click)="save()"  [disabled]="form.invalid">Save</button>
+        <button (click)="cancel()">Cancel</button>
+      </div>
+     
+    </form>
+  </div>
+  <div *ngIf="ErrFoot" >
+  <div class="footer">
+    <ul>
+      <li *ngFor = "let item of data; let i = index">
+            {{item.ex_position}} - {{item.ex_startDate}} - {{item.ex_finishDate}} - {{item.ex_companyName}} - {{item.ex_description}}
+        <div>
+          <button (click)="update(i)">update</button>
+          <button (click)="delete(item.ex_id,i)">delete</button>
+        </div>
+      </li>
+      </ul>
+      <div *ngIf="ErrDel" class="msjError">couldn't  be deleted</div>
+  </div>
+</div>
