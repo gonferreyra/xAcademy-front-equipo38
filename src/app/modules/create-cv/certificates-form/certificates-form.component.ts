@@ -17,7 +17,7 @@ export class CertificatesFormComponent implements OnInit {
   token:string = "";
   ErrForm:boolean = false;
   ErrDel:boolean = false;
-  ErrFoot:boolean = false;
+  ErrFoot:boolean = true;
   id!: string;
   
   data = [{
@@ -49,7 +49,23 @@ export class CertificatesFormComponent implements OnInit {
     else{
       this.router.navigate(['/','login']);
     }
+
+    this.api.get("certificate/"+this.id).subscribe({
+      next: (response:any) =>{
+        this.ErrFoot = true ;
+       console.log(response);
+       this.data = [...response.certificate];
+     },
+      error: err =>{
+       console.log(err);
+       this.ErrForm = true ; 
+     },
+ });
+  
+  
   }
+
+
 
   save() {
     let FormRaw = this.form.getRawValue();
