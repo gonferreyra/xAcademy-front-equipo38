@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-page.component.css']
 })
 export class CreatePageComponent implements OnInit {
-
+  name:string | null | undefined = "";
   constructor() { }
 
   ngOnInit(): void {
+    this.name = localStorage.getItem("Name");   //descomentar para usar con TOKEN
   }
 
 }

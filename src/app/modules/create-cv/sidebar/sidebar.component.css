@@ -1,0 +1,31 @@
+.sidebar {
+    padding: 25px 20px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .sidebar a {
+    background: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: inherit;
+    font-size: inherit;
+    padding: 5px;
+    font-family: inherit;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover{
+    color: var(--blue);
+  }
+  
+  @media screen and (min-width: 769px) {
+    
+    .sidebar {
+      flex-direction: column;
+    }
+    
+  }
+  
+ 
