@@ -1,0 +1,22 @@
+.exp-container {
+    background-color: #212121;
+    color: white;
+    height: 100vh;
+    font-family: "Ubuntu", sans-serif;
+  }
+  
+  .header {
+    padding: 25px 20px;
+  }
+  
+  .header h3 {
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: inherit;
+    margin: 0;
+  }

@@ -1,0 +1,38 @@
+
+<div class="container">
+    <app-sidebar></app-sidebar>
+    <form class="data" [formGroup]="form">
+      <div class="data-field" >
+        <label for="training">Training</label>
+        <input type="text" name="training" formControlName="training" />
+      </div>
+      <div class="data-field">
+        <label for="institution">Institution</label>
+        <input type="text" name="institution" formControlName="institution" />
+      </div>
+      <div class="data-field">
+        <label for="year">Year</label>
+        <input type="text" name="year" formControlName="year" />
+      </div>
+      <div *ngIf="ErrForm" class="msjError">Form invalid</div>
+      <div class="btn-container">
+        <button (click)="save()"  [disabled]="form.invalid">Save</button>
+        <button (click)="cancel()">Cancel</button>
+      </div>
+     
+    </form>
+  </div>
+  <div *ngIf="ErrFoot" >
+  <div class="footer">
+    <ul>
+      <li *ngFor = "let item of data; let i = index">
+            {{item.ce_training}} - {{item.ce_institution}} - {{item.ce_year}}
+        <div>
+          <button (click)="update(i)">update</button>
+          <button (click)="delete(item.ce_id,i)">delete</button>
+        </div>
+      </li>
+      </ul>
+      <div *ngIf="ErrDel" class="msjError">couldn't  be deleted</div>
+  </div>
+</div>
