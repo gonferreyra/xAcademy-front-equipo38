@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'localhost:3000',
-  TOKEN:"access_token"
+  API_URL: 'http://localhost:3000/',
+  TOKEN:"token"
 };
 
 /*
