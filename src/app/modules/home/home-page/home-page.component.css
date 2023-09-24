@@ -27,7 +27,7 @@ body{
 ============================*/
 .btn {
   color: #0088ff;
-  
+  font-family: 'Ubuntu', sans-serif;
   text-decoration: none;
   border: 2px solid #0088ff;
   padding: 10px 20px;

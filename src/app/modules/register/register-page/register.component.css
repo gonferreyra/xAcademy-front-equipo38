@@ -113,6 +113,10 @@
     color: rgb(255, 2, 2);
     text-align: center;
   }
+  .msjGood{
+    color: rgb(32, 255, 2);
+    text-align: center;
+  }
   .div-body{
 
       display: flex;
