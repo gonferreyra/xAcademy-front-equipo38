@@ -8,6 +8,8 @@ import { ApiService } from './core/http/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AngularResizeEventModule } from 'angular-resize-event';
+import { FooterModule } from './modules/home/footer/footer.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AngularResizeEventModule } from 'angular-resize-event';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AngularResizeEventModule
+    AngularResizeEventModule,
+    FooterModule
    ],
   providers: [ApiService],
   bootstrap: [AppComponent]
