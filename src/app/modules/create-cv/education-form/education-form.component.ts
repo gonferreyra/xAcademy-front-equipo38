@@ -4,16 +4,18 @@ import { ApiService } from '../../../core/http/api.service';
 import { environment } from '../../../../environments/environment'
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-experience-form',
-  templateUrl: './experience-form.component.html',
-  styleUrls: ['./experience-form.component.css']
+  selector: 'app-education-form',
+  templateUrl: './education-form.component.html',
+  styleUrls: ['./education-form.component.css']
 })
-export class ExperienceFormComponent implements OnInit {
+export class EducationFormComponent implements OnInit {
+
   form:UntypedFormGroup;
-  position = new UntypedFormControl('', [Validators.required]);
+  formation = new UntypedFormControl('', [Validators.required]);
+  institution = new UntypedFormControl('', [Validators.required]);
+  location = new UntypedFormControl('', [Validators.required]);
   startDate = new UntypedFormControl('', [Validators.required]);
   finishDate = new UntypedFormControl('', [Validators.required]);
-  companyName = new UntypedFormControl('', [Validators.required]);
   description = new UntypedFormControl('', [Validators.required]);
   token:string = "";
   ErrForm:boolean = false;
@@ -22,21 +24,27 @@ export class ExperienceFormComponent implements OnInit {
   id!: string;
   
   data = [{
-    ex_id: 0,
-    ex_position: "dummy",
-    ex_startDate: "0000-01-01",
-    ex_finishDate: "0000-01-01",
-    ex_companyName: "dummy",
-    ex_description:"dummy",
-    }];
+    ed_id: 1,
+    ed_formation: "dummy",
+    ed_institution: "dummy",
+    ed_location: "dummy",
+    ed_startDate: "Invalid date",
+    ed_finishDate: "Invalid date",
+    ed_description: "dummy",
+    ed_fk_user: "1"
+    },
+];
+
+
 
   constructor(public api : ApiService,private formBuilder: UntypedFormBuilder, private router: Router) { 
     this.form = this.formBuilder.group({
-      position : this.position,
-      startDate : this.startDate,
-      finishDate : this.finishDate,
-      companyName : this.companyName,
-      description : this.description,
+      formation: this.formation,
+      institution: this.institution,
+      location:this.location,
+      startDate:this.startDate,
+      finishDate:this.finishDate,
+      description:this.description
     });
     
   }
@@ -53,18 +61,17 @@ export class ExperienceFormComponent implements OnInit {
     else{
       this.router.navigate(['/','login']);
     }
-    this.api.get("experience/"+this.id).subscribe({
+
+    this.api.get("education/"+this.id).subscribe({
       next: (response:any) =>{
         this.ErrFoot = true ;
-       this.data = [...response.experience];
+       this.data = [...response.education];
      },
       error: err =>{
       this.ErrFoot = false ; 
-     },
- })
-
-
-
+     }})
+  
+  
   }
 
   save() {
@@ -75,26 +82,23 @@ export class ExperienceFormComponent implements OnInit {
       }
     this.api.setHeader("Authorization","Bearer "+ token);
     
-    this.api.post("experience/new/"+this.id,FormRaw).subscribe({
+    this.api.post("education/new/"+this.id,FormRaw).subscribe({
            next: (data:any) =>{
             this.ErrForm = false ;
-            console.log(data.newExperience);
-            this.data.push(data.newExperience);
+            this.data.push(data.newEducation);
           },
            error: err =>{
-            console.log(err);
             this.ErrForm = true ; 
           },
       });
-    
   }
   
   cancel() {
-    this.router.navigate(['/create/','education']);
+    this.router.navigate(['/create/','person']);
   }
 
-  delete(id:number,index: number){
-    this.api.delete("experience/"+id).subscribe({
+  delete(id:number,index:number){
+    this.api.delete("education/"+id).subscribe({
       next: (data:any) =>{
         this.ErrDel = false ;
         console.log(data);
@@ -108,13 +112,15 @@ export class ExperienceFormComponent implements OnInit {
 
   update(id:number){
    this.form.setValue({
-        position : this.data[id].ex_position,
-        startDate : this.data[id].ex_startDate,
-        finishDate : this.data[id].ex_finishDate,
-        companyName : this.data[id].ex_companyName,
-        description : this.data[id].ex_description
+    formation : this.data[id].ed_formation,
+    institution : this.data[id].ed_institution,
+    location : this.data[id].ed_location,
+    startDate : this.data[id].ed_startDate,
+    finishDate : this.data[id].ed_finishDate,
+    description : this.data[id].ed_description
      
     })
   }
+
 
 }

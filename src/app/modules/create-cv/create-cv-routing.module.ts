@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { CertificatesFormComponent } from './certificates-form/certificates-form.component';
 import { ExperienceFormComponent } from './experience-form/experience-form.component';
+import { EducationFormComponent } from './education-form/education-form.component';
 
 const routes: Routes = [{
   path: '',
@@ -11,8 +12,11 @@ const routes: Routes = [{
     { path: 'certificates', 
     component: CertificatesFormComponent},
     { path: 'experience', 
-    component: ExperienceFormComponent}
+    component: ExperienceFormComponent},
+    { path: 'education', 
+    component: EducationFormComponent}
     ]
+    
 }];
 
 @NgModule({

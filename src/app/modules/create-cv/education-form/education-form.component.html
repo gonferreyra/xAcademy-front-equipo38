@@ -1,0 +1,51 @@
+<div class="container">
+    <app-sidebar></app-sidebar>
+    <form class="data" [formGroup]="form">
+        <div class="data-field" >
+            <label for="formation">Formation</label>
+            <input type="text" name="formation" formControlName="formation" />
+            </div>
+     <div class="data-field" >
+        <label for="institution">Institution</label>
+        <input type="text" name="institution" formControlName="institution" />
+        </div>
+      
+        <div class="data-field"> 
+            <label for="location">Location</label> 
+            <input type="text" name="location" formControlName="location" /> 
+        </div>
+        
+        <div class="data-field">
+            <label for="startDate">Start Date</label>
+            <input type="text" name="startDate" formControlName="startDate" />
+          </div>
+          <div class="data-field"> 
+            <label for="finishDate">Finish Date</label> 
+            <input type="text" name="finishDate" formControlName="finishDate" /> 
+            </div>
+        <div class="data-field"> 
+            <label for="description">Description</label> 
+            <input type="text" name="description" formControlName="description" /> 
+        </div>
+      <div class="btn-container">
+        <button (click)="save()"  [disabled]="form.invalid">Save</button>
+        <button (click)="cancel()">Cancel</button>
+      </div>
+      
+    <div *ngIf="ErrForm" class="msjError">Form invalid</div>
+    </form>
+  </div>
+  <div *ngIf="ErrFoot" >
+  <div class="footer">
+    <ul>
+      <li *ngFor = "let item of data; let i = index">
+        {{item.ed_formation}} - {{item.ed_institution}} - {{item.ed_location}} - {{item.ed_startDate}} - {{item.ed_finishDate}} - {{item.ed_description}}
+        <div>
+          <button (click)="update(i)">update</button>
+          <button (click)="delete(item.ed_id,i)">delete</button>
+        </div>
+      </li>
+      </ul>
+      <div *ngIf="ErrDel" class="msjError">couldn't  be deleted</div>
+  </div>
+</div>
