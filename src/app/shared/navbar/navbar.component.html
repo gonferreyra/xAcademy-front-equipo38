@@ -18,10 +18,12 @@
     
       <ul *ngIf="closed" class="main-nav">
           <li><a href="/home">Home</a></li>
-          <li><a href="/create">Create +</a></li>
+          <li><a href="/create/person">Create +</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="#">Register</a></li>
+          <li><a *ngIf="!statLog" (click)="logout()">Log Out</a></li>
+          <li><a *ngIf="statLog" href="/login">Login</a></li>
+          <li><a *ngIf="statLog" href="/register">Register</a></li>
+          <li><div *ngIf="!statLog" class="profile"> Profile: {{name}}</div></li>
       </ul>
 	</header> 
  

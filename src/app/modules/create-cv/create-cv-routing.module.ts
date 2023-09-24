@@ -4,6 +4,7 @@ import { CreatePageComponent } from './create-page/create-page.component';
 import { CertificatesFormComponent } from './certificates-form/certificates-form.component';
 import { ExperienceFormComponent } from './experience-form/experience-form.component';
 import { EducationFormComponent } from './education-form/education-form.component';
+import { PersonFormComponent } from './person-form/person-form.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,7 +15,9 @@ const routes: Routes = [{
     { path: 'experience', 
     component: ExperienceFormComponent},
     { path: 'education', 
-    component: EducationFormComponent}
+    component: EducationFormComponent},
+    { path: 'person', 
+    component: PersonFormComponent},
     ]
     
 }];
