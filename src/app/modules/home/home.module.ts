@@ -8,6 +8,7 @@ import { HomeTextComponent } from './home-text/home-text.component';
 
 
 
+
 @NgModule({
   declarations: [
     HomePageComponent,
