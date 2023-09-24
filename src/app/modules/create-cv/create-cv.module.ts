@@ -7,6 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ExperienceFormComponent } from './experience-form/experience-form.component';
+import { EducationFormComponent } from './education-form/education-form.component';
 
 
 @NgModule({
@@ -14,8 +15,8 @@ import { ExperienceFormComponent } from './experience-form/experience-form.compo
     CreatePageComponent,
     CertificatesFormComponent,
     SidebarComponent,
-  
     ExperienceFormComponent,
+    EducationFormComponent,
   ],
   imports: [
     CommonModule,
