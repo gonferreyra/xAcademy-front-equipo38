@@ -1,0 +1,57 @@
+
+<body>
+  <header>
+    <h1>{{ personData.pe_name }} {{personData.pe_lastName}}</h1>
+  </header>
+  
+  <section id="personal-info">
+    <h2>Datos Personales</h2>
+    <ul>
+        <li><strong>Dirección:</strong> {{personData.pe_address}}</li>
+        <li><strong>Correo Electrónico:</strong>{{personData.pe_email}}</li>
+        <li><strong>Teléfono:</strong> {{personData.pe_phone}}<span id="phone"></span></li>
+    </ul>
+  </section>
+  
+  <section id="education">
+    <h2>Educación</h2>
+    <ul id="education-list">
+      <li *ngFor="let item of dataEducation; let i = index">
+        <h3>{{ item.ed_formation }}</h3>
+        <p>Institución: {{ item.ed_institution }}</p>
+        <p>Ubicación: {{ item.ed_location }}</p> 
+      </li>
+    </ul>
+  </section>
+  
+  <section id="experience">
+    <h2>Experiencia Laboral</h2>
+    <ul id="experience-list">
+  
+        <li *ngFor="let item of dataExperience; let i = index">
+          <h1>{{item.ex_position}} </h1>
+          <p>Fecha de inicio {{item.ex_startDate}} Fecha de finalizacion {{item.ex_finishDate}}</p>
+          <p>{{item.ex_companyName}}</p>
+          <p>{{item.ex_position}}</p>
+          <p>{{item.ex_description}}</p>
+        </li>
+      </ul>
+  
+  </section>
+  
+  <section id="certificate">
+    <h2>Certificados</h2>
+    <ul id="certificate-list">
+      <ul>
+        <li *ngFor="let item of dataCertificate; let i = index">
+          <h3>{{item.ce_training}} año {{item.ce_year}}</h3> 
+          <p>{{item.ce_training}} </p>
+          <p>{{item.ce_institution}}</p>
+        </li>
+      </ul>
+    </ul>
+  </section>
+</body>
+<section style="display: flex; flex-direction: column; align-items: center; justify-content: center;"><button (click)="generatePDF()">Generar PDF</button>
+</section>
+
