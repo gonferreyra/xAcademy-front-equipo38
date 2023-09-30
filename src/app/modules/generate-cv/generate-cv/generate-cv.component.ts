@@ -105,29 +105,43 @@ export class GenerateCvComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
   generatePDF() {
-    const documentDefinition = {
-      content: [
-        { text: 'Ejemplo de PDF generado con PDFMake en Angular', style: 'header' },
-        'Este es un PDF de ejemplo generado desde una aplicación Angular.',
-        {
-          ul: [
-            'Elemento 1',
-            'Elemento 2',
-            'Elemento 3',
-          ]
+    const ulList: string[] = [];
+
+    this.api.get("certificate/" + this.id).subscribe({
+        next: (response: any) => {
+            const dataFromDatabase = response.certificate;
+
+            dataFromDatabase.forEach((item: any) => {
+                ulList.push(item.ce_training);
+            });
+
+            const tableData = ulList.map(item => [item]);
+
+            const documentDefinition = {
+              content: [
+                  'Datos personales',
+                  '\n', 
+                  'Educación',
+                  '\n', 
+                  'Experiencia Laboral',
+                  '\n', 
+                  'Certificate', 
+                  {
+                      table: {
+                          body: tableData,
+                      },
+                  }
+              ],
+          };
           
-          
+
+            const pdfDocGenerator = pdfMake.createPdf(documentDefinition);
+            pdfDocGenerator.download('vcmuestra.pdf');
+        },
+        error: err => {
+            console.log("Error al obtener datos de la base de datos", err);
         }
-      ],
-      styles: {
-        header: {
-          fontSize: 18,
-          bold: true
-        }
-      }
-    };
-  
-    const pdfDocGenerator = pdfMake.createPdf(documentDefinition);
-    pdfDocGenerator.download('vcmuestra.pdf');
-  }
+    });
+}
+
 }
