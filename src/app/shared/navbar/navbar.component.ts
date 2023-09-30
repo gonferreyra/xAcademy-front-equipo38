@@ -7,6 +7,7 @@ import { ResizedEvent } from 'angular-resize-event';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+[x: string]: any;
   closed:boolean = false;
   disable:boolean = false;
   menu:string = "menu";
