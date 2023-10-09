@@ -109,22 +109,4 @@ export class GenerateCvComponent implements OnInit {
   setValue(arg0: { name: any; lastName: any; address: any; email: any; phone: any; }) {
     throw new Error('Method not implemented.');
   }
-  /*
-    onExportClick(){
-      const options={
-        filename: 'un nombre.pdf',
-        image: { type: 'jpeg'},
-        html2canvas: {},
-        jsPDF: { orientation: 'landscape'}
-      };
-    
-      const content: Element | null = document.getElementById('contenido-exportar');
-
-      html2pdf()
-        .from(content)
-        .set(options)
-        .save()
-    }
-  }
-*/
 }
