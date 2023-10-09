@@ -9,7 +9,7 @@
   <header (resized)="onResized($event)" class="header">
     <div class="brand">
     <img src="../../../assets/test-svgrepo-com.svg">
-		<h1 class="logo">Generate your CV</h1>
+    <a href="/create/person"> <h1 class="logo">Generate your CV</h1></a>
     <div class="hamb-button" [ngSwitch]="menu">
       <img class="hamb-icon" src="../../../assets/icons8-menu-50.png" (click)="change()" *ngSwitchCase="'menu'">
       <img class="hamb-icon" src="../../../assets/closed.svg" (click)="change()" *ngSwitchCase="'cross'">
@@ -20,16 +20,10 @@
           <li><a href="/home">Home</a></li>
           <li><a href="/cv">Mi CV</a></li>
           <li><a href="/create/person">Create +</a></li>
-          <li><a *ngIf="!statLog" (click)="logout()">Log Out</a></li>
+          <li><a *ngIf="!statLog" (click)="logout()" style="cursor: pointer;">Logout</a></li>
           <li><a *ngIf="statLog" href="/login">Login</a></li>
           <li><a *ngIf="statLog" href="/register">Register</a></li>
-          <li><div *ngIf="!statLog" class="profile"> Profile: {{name}}</div></li>
+          <li><div *ngIf="!statLog" class="profile"> User: {{name}}</div></li>
       </ul>
 	</header> 
-
-
-<!-- Agrega un div con un ID que rodee el contenido que deseas convertir en PDF -->
-<div id="pdf-content">
-  <!-- Tu contenido HTML aquí -->
-</div>
-</html>
+  </html>
