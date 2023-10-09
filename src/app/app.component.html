@@ -1,3 +1,12 @@
-<app-navbar></app-navbar>
+<app-navbar (closedChange)="onNavbarClosedChange($event)"></app-navbar>
+<div
+  class="content-container"
+  [ngClass]="{ 'expanded': !navbarClosed, 'collapsed': navbarClosed }"
+  [style.transform]="'translateY(' + contentOffsetY + 'px)'"
+  #contentContainer>
+
+<router-outlet></router-outlet>
+
+</div>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
