@@ -3,13 +3,14 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0 auto; 
     padding: 0;
-    width: auto;
+    width: 75%;
     background-color: #f0f0f0;
+    border-radius: 20px;
 }
 
 header {
     background-color: #007bff;
-    margin-top: 5px;
+    margin-top: 10px;
     color: #fff;
     border-radius: 10px;
     text-align: center;
@@ -17,11 +18,15 @@ header {
 }
 
 h1 {
-    margin: 0;
+    margin:0;
 }
 
 section {
-    margin: 20px;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: px;
+    border-color: #ccc;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -29,9 +34,16 @@ section {
 }
 
 h2 {
+    font-size: 30px;
     color: #007bff;
 }
-
+h3 {
+    font-size: 25px;
+    color: #1d2023;
+}
+p{
+    font-size: 20px;
+}
 ul {
     list-style-type: none;
     padding: 0;
@@ -43,5 +55,48 @@ li {
 
 strong {
     font-weight: bold;
+    border: #007bff;
 }
 
+.fecha-recuadro {
+    font-size: 20px;
+    font-style: italic;
+    float: right;
+    color: rgba(0, 0, 0, 0.733);
+    background-color: #b3a9a968;
+    border: 1px solid #b3a9a9; /* Puedes ajustar el grosor y el color del borde según tus preferencias */
+    padding: 8px; /* Espacio dentro del recuadro */
+    border-radius: 10px; /* Bordes redondeados del recuadro */
+    text-align: center;
+    width: 320px;
+  }
+
+  .with-line {
+    border-bottom: 1px solid #4e4747; /* Grosor y color de la línea */
+    margin-bottom: 10px; /* Espacio entre el h1 y el párrafo */
+    padding-bottom: 5px; /* Espacio entre la línea y el texto del h1 */
+  }
+
+  
+.seccion-botonGenerar {
+    width: 20%;
+    border-radius: 10px;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.botonGenerar {
+    background-color: #007bff;;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo del botón en hover */
+.botonGenerar:hover {
+    background-color: gray/* Nuevo color al pasar el mouse */
+}

@@ -5,46 +5,54 @@
   </header>
   
   <section id="personal-info">
-    <h2>Datos Personales</h2>
+    <h2 class="with-line">Datos Personales</h2>
     <ul>
-        <li><strong>Dirección:</strong> {{personData.pe_address}}</li>
-        <li><strong>Correo Electrónico:</strong>{{personData.pe_email}}</li>
-        <li><strong>Teléfono:</strong> {{personData.pe_phone}}<span id="phone"></span></li>
+        <li><p><strong>Dirección:</strong> {{personData.pe_address}}</p></li>
+        <li><p><strong>Correo Electrónico: </strong>{{personData.pe_email}}</p></li>
+        <li><p><strong>Teléfono:</strong> {{personData.pe_phone}}<span id="phone"></span></p></li>
     </ul>
   </section>
   
   <section id="education">
-    <h2>Educación</h2>
+    <h2 class="with-line">Educación</h2>
     <ul id="education-list">
       <li *ngFor="let item of dataEducation; let i = index">
-        <h3>{{ item.ed_formation }}</h3>
-        <p>Institución: {{ item.ed_institution }}</p>
+        <h3>
+          {{ item.ed_institution }} 
+          <span class="fecha-recuadro">   {{item.ed_startDate | date: 'MMMM YYYY'}} / {{item.ed_finishDate | date: 'MMMM YYYY'}}</span>
+        </h3> 
+        <p>Titulo: {{ item.ed_formation }}</p>
         <p>Ubicación: {{ item.ed_location }}</p> 
+        <p>{{item.ed_description}}</p>
+        <p></p>
       </li>
     </ul>
   </section>
   
   <section id="experience">
-    <h2>Experiencia Laboral</h2>
-    <ul id="experience-list">
-  
-        <li *ngFor="let item of dataExperience; let i = index">
-          <h1>{{item.ex_position}} </h1>
-          <p>Fecha de inicio {{item.ex_startDate}} Fecha de finalizacion {{item.ex_finishDate}}</p>
-          <p>{{item.ex_companyName}}</p>
-          <p>{{item.ex_position}}</p>
-          <p>{{item.ex_description}}</p>
-        </li>
-      </ul>
-  
+    <h2 class="with-line">Experiencia Laboral</h2>
+      <ul id="experience-list">
+          <li *ngFor="let item of dataExperience; let i = index">
+            <h1>
+              {{item.ex_companyName}} 
+              <span class="fecha-recuadro"> {{item.ex_startDate | date: 'MMMM YYYY'}} / {{item.ex_finishDate | date: 'MMMM YYYY'}}</span>
+            </h1>
+            <p>Posicion: {{item.ex_position}}</p>
+            <p>En {{item.ex_companyName}} {{item.ex_description}}</p>
+          </li>
+        </ul>
+        
   </section>
   
   <section id="certificate">
-    <h2>Certificados</h2>
+    <h2 class="with-line">Certificados</h2>
     <ul id="certificate-list">
       <ul>
         <li *ngFor="let item of dataCertificate; let i = index">
-          <h3>{{item.ce_training}} año {{item.ce_year}}</h3> 
+          <h3>
+            {{item.ce_training}} 
+            <strong class="fecha-recuadro">{{item.ce_year | date: 'yyyy'}}</strong> 
+          </h3> 
           <p>{{item.ce_training}} </p>
           <p>{{item.ce_institution}}</p>
         </li>
@@ -52,6 +60,6 @@
     </ul>
   </section>
 </body>
-<section style="display: flex; flex-direction: column; align-items: center; justify-content: center;"><button (click)="generatePDF()">Generar PDF</button>
-</section>
-
+<div class="actions">
+ 
+</div>

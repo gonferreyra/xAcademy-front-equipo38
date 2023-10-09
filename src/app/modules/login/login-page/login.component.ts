@@ -3,6 +3,8 @@ import { UntypedFormBuilder,UntypedFormControl,UntypedFormGroup, Validators } fr
 import { ApiService } from '../../../core/http/api.service';
 import { environment } from '../../../../environments/environment'
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/auth/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
   token:string = "";
   ErrAuth:boolean = false;
 
-  constructor(public api : ApiService,private formBuilder: UntypedFormBuilder,private router: Router) { 
+  constructor(public api : ApiService,private formBuilder: UntypedFormBuilder,private router: Router, private authService: AuthService ) { 
     this.form = this.formBuilder.group({
       email:this.email,
       password:this.password,
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit {
        
     }
     });
+    
   }
 
   login() {
@@ -43,6 +46,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem("Token",<string>this.token);
               localStorage.setItem("Name",<string>name);
               localStorage.setItem("id",<string>id);
+              this.authService.userLoggedIn();
               this.router.navigate(['/','home']);
         }
            

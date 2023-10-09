@@ -6,6 +6,7 @@ body {
 	line-height: 1.6;
 	margin: 0;
 	min-height: 100vh;
+	
 }
 ul {
   margin: 0;
@@ -71,7 +72,6 @@ img{
 }
 
 
-
 .header {
 	padding-top: .5em;
 	padding-bottom: .5em;
@@ -83,6 +83,13 @@ img{
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	position: fixed;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+	height: auto;
+  	z-index: 1000; /* Ajusta el valor de z-index según sea necesario */
+  	background-color: var(--black); /* Establece el color de fondo deseado */
 }
 
 /*===================================
@@ -158,6 +165,7 @@ img{
 	}
 
 	.header {
+		
 		flex-direction: column;
 		align-items: center;
     	.header{

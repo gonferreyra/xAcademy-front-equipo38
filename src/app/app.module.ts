@@ -21,7 +21,7 @@ import { FooterModule } from './modules/home/footer/footer.module';
     ReactiveFormsModule,
     HttpClientModule,
     AngularResizeEventModule,
-    FooterModule
+    FooterModule,
    ],
   providers: [ApiService],
   bootstrap: [AppComponent]
