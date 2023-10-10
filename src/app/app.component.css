@@ -1,12 +1,12 @@
 /* Estilos por defecto para pantallas más grandes (mayores de 800px) */
-.content-container {
+.content{
   margin-top: 100px;
   margin-bottom: 80px;
 }
 
 /* Estilos para pantallas entre 768px y 800px */
 @media screen and (min-width: 768px) and (max-width: 1000px) {
-  .content-container {
+  .content{
     margin-top: 150px;
     margin-bottom: 80px;
   }
@@ -14,8 +14,30 @@
 
 /* Estilos para pantallas más pequeñas (como dispositivos móviles) */
 @media screen and (max-width: 768px) {
-  .content-container {
+  .content{
     margin-top: 330px;
     margin-bottom: 80px;
   }
+}
+
+.boton {
+  flex-direction: column;
+}
+
+.boton-descarga {
+
+  background-color:  #007bff; /* Color azul de fondo */
+  font-size: 20px;
+  color: white; /* Texto en color blanco */
+  padding: 10px 20px; /* Ajusta el espaciado interno según tus necesidades */
+  border: none; /* Quita el borde */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  border-radius: 5px; /* Agrega bordes redondeados */
+  display: block; /* Hace que el botón sea un elemento de bloque para centrarlo */
+  margin: 0 auto; /* Centra horizontalmente el botón */
+  transition: background-color 0.3s; /* Efecto de transición en el cambio de color de fondo */
+}
+
+.boton-descarga:hover {
+  background-color: darkblue; /* Cambia el color de fondo en el hover */
 }

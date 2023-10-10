@@ -1,65 +1,90 @@
 
-<body>
-  <header>
-    <h1>{{ personData.pe_name }} {{personData.pe_lastName}}</h1>
-  </header>
-  
-  <section id="personal-info">
-    <h2 class="with-line">Datos Personales</h2>
-    <ul>
-        <li><p><strong>Dirección:</strong> {{personData.pe_address}}</p></li>
-        <li><p><strong>Correo Electrónico: </strong>{{personData.pe_email}}</p></li>
-        <li><p><strong>Teléfono:</strong> {{personData.pe_phone}}<span id="phone"></span></p></li>
-    </ul>
-  </section>
-  
-  <section id="education">
-    <h2 class="with-line">Educación</h2>
-    <ul id="education-list">
-      <li *ngFor="let item of dataEducation; let i = index">
-        <h3>
-          {{ item.ed_institution }} 
-          <span class="fecha-recuadro">   {{item.ed_startDate | date: 'MMMM YYYY'}} / {{item.ed_finishDate | date: 'MMMM YYYY'}}</span>
-        </h3> 
-        <p>Titulo: {{ item.ed_formation }}</p>
-        <p>Ubicación: {{ item.ed_location }}</p> 
-        <p>{{item.ed_description}}</p>
-        <p></p>
-      </li>
-    </ul>
-  </section>
-  
-  <section id="experience">
-    <h2 class="with-line">Experiencia Laboral</h2>
-      <ul id="experience-list">
-          <li *ngFor="let item of dataExperience; let i = index">
-            <h1>
-              {{item.ex_companyName}} 
-              <span class="fecha-recuadro"> {{item.ex_startDate | date: 'MMMM YYYY'}} / {{item.ex_finishDate | date: 'MMMM YYYY'}}</span>
-            </h1>
-            <p>Posicion: {{item.ex_position}}</p>
-            <p>En {{item.ex_companyName}} {{item.ex_description}}</p>
-          </li>
-        </ul>
-        
-  </section>
-  
-  <section id="certificate">
-    <h2 class="with-line">Certificados</h2>
-    <ul id="certificate-list">
+<body >
+
+<!-- PERSONA -->
+
+<ul>
+  <li *ngIf="personData.pe_address">
+    <header>
+      <h1>{{ personData.pe_name }} {{personData.pe_lastName}}</h1>
+    </header>
+    <section>
+      <h2 class="with-line">Datos Personales</h2>
       <ul>
-        <li *ngFor="let item of dataCertificate; let i = index">
-          <h3>
-            {{item.ce_training}} 
-            <strong class="fecha-recuadro">{{item.ce_year | date: 'yyyy'}}</strong> 
-          </h3> 
-          <p>{{item.ce_training}} </p>
-          <p>{{item.ce_institution}}</p>
+        <li *ngIf="personData.pe_address">
+          <p><strong>Dirección:</strong> {{ personData.pe_address }}</p>
+        </li>
+        <li *ngIf="personData.pe_email">
+          <p><strong>Correo Electrónico: </strong>{{ personData.pe_email }}</p>
+        </li>
+        <li *ngIf="personData.pe_phone">
+          <p><strong>Teléfono:</strong> {{ personData.pe_phone }}<span id="phone"></span></p>
         </li>
       </ul>
-    </ul>
-  </section>
+    </section>
+  </li>
+</ul>
+
+
+<!-- EDUCACION -->
+
+<section>
+  <h2 class="with-line">Educación</h2>
+
+<ul>
+  <li *ngFor="let item of dataEducation; let i = index">
+    <section *ngIf="item.ed_institution">
+      
+      <span class="fecha-recuadro">{{ item.ed_startDate | date: 'MMMM YYYY' }} / {{ item.ed_finishDate | date: 'MMMM YYYY' }}</span>
+          <h1 *ngIf="item.ed_startDate">{{ item.ed_institution }} </h1> 
+          <ul>
+            <li *ngIf="item.ed_formation">
+              <p >Titulo: {{ item.ed_formation }}</p>
+            </li>
+            <li *ngIf="item.ed_location">
+              <p >Ubicación: {{ item.ed_location }}</p> 
+            </li>
+          <li *ngIf="item.ed_description">
+              <p>{{ item.ed_description }}</p>
+          </li>
+          </ul>
+      </section>
+  </li>
+</ul>  
+</section>
+<!-- EXPERIENCIA -->
+<section>
+<h2 class="with-line">Experiencia </h2>
+<ul>
+  <li *ngFor="let item of dataExperience; let i = index">
+    <section id="experience"  *ngIf="item.ex_companyName">
+      
+            <span class="fecha-recuadro"  *ngIf="item.ex_startDate"r>{{ item.ex_startDate | date: 'MMMM YYYY' }} / {{ item.ex_finishDate | date: 'MMMM YYYY' }}</span>
+            <h1 *ngIf="item.ex_companyName">{{item.ex_companyName}}</h1>
+            <ul>
+              <li *ngIf="item.ex_position"><p>Posicion: {{item.ex_position}}</p></li>
+              <li *ngIf="item.ex_companyName "><p>En {{item.ex_companyName}} {{item.ex_description}}</p></li>
+          </ul> 
+    </section>
+  </li>
+</ul>  
+</section>
+
+<!-- CERTIFICATE -->
+<section>
+  <h2 class="with-line">Certificados</h2>
+  <ul>
+    <li *ngFor="let item of dataCertificate; let i = index">
+      <section *ngIf="item.ce_institution" >
+       
+            <span class="fecha-recuadro" *ngIf="item.ce_year" >{{ item.ce_year | date: 'YYYY' }}</span>
+            <ul> 
+                <h1 *ngIf="item.ce_institution">{{item.ce_institution}}</h1>
+                <li *ngIf="item.ce_training"><p>{{item.ce_training}} </p></li>
+            </ul>
+      </section>
+  </li>
+</ul>  
+</section>
 </body>
-<div class="actions">
- 
-</div>
+

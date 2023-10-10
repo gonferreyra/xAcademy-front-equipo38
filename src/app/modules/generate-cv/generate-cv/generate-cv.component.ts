@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/http/api.service';
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
+//import { content } from 'html2canvas/dist/types/css/property-descriptors/content';
 
 //import * as html2pdf from 'html2pdf.js';
 
 
 //import * as pdfMake from "pdfmake/build/pdfmake";
 //import * as pdfFonts from "pdfmake/build/vfs_fonts";
-//import html2canvas from 'html2canvas';
-//import * as jsPDF from 'jspdf';
+
 //(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
 
@@ -18,6 +21,7 @@ import { ApiService } from 'src/app/core/http/api.service';
   styleUrls: ['./generate-cv.component.css']
 })
 export class GenerateCvComponent implements OnInit {
+  
   id!: string;
   datosCv: any [] = [];
   token:string = "";
@@ -28,33 +32,34 @@ export class GenerateCvComponent implements OnInit {
   personData: any = {}; // Almacena los datos de la persona
 
   dataEducation = [{
-    ed_formation: " ",
-    ed_institution: " ",
-    ed_location: " ",
-    ed_startDate: " ",
-    ed_finishDate: " ",
-    ed_description: " ",
+    ed_formation: "",
+    ed_institution: "",
+    ed_location: "",
+    ed_startDate: "",
+    ed_finishDate: "",
+    ed_description: "",
     },
 ];
   dataCertificate = [{
     ce_id: 0,
-    ce_training: " ",
-    ce_institution: " ",
-    ce_year: " ",
+    ce_training: "",
+    ce_institution: "",
+    ce_year: "",
     }];
 
     
     dataExperience = [{
-      ex_position: " ",
-      ex_startDate: " ",
-      ex_finishDate: " ",
-      ex_companyName: " ",
-      ex_description:" ",
+      ex_position: "",
+      ex_startDate: "",
+      ex_finishDate: "",
+      ex_companyName: "",
+      ex_description:"",
       }];
 
   constructor(public api : ApiService,private router: Router) { 
     
   }
+  
   
   ngOnInit(): void {
     const id = localStorage.getItem("id")
@@ -109,22 +114,5 @@ export class GenerateCvComponent implements OnInit {
   setValue(arg0: { name: any; lastName: any; address: any; email: any; phone: any; }) {
     throw new Error('Method not implemented.');
   }
-  /*
-    onExportClick(){
-      const options={
-        filename: 'un nombre.pdf',
-        image: { type: 'jpeg'},
-        html2canvas: {},
-        jsPDF: { orientation: 'landscape'}
-      };
-    
-      const content: Element | null = document.getElementById('contenido-exportar');
 
-      html2pdf()
-        .from(content)
-        .set(options)
-        .save()
-    }
-  }
-*/
 }
