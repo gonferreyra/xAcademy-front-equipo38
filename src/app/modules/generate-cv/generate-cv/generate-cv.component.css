@@ -1,10 +1,12 @@
 
-body {
+.vista{
     font-family: 'Roboto', sans-serif;
-    margin: 0 auto; 
-    padding: 0;
-    width: 75%;
-    background-color: #f0f0f0;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 95%;
+    background-color: #f2f2f2;
     border-radius: 20px;
 }
 
@@ -64,17 +66,17 @@ strong {
     float: right;
     color: rgba(0, 0, 0, 0.733);
     background-color: #b3a9a968;
-    border: 1px solid #b3a9a9; /* Puedes ajustar el grosor y el color del borde según tus preferencias */
-    padding: 8px; /* Espacio dentro del recuadro */
-    border-radius: 10px; /* Bordes redondeados del recuadro */
+    border: 1px solid #b3a9a9; 
+    padding: 8px;
+    border-radius: 10px; 
     text-align: center;
     width: 320px;
   }
 
   .with-line {
-    border-bottom: 1px solid #4e4747; /* Grosor y color de la línea */
-    margin-bottom: 10px; /* Espacio entre el h1 y el párrafo */
-    padding-bottom: 5px; /* Espacio entre la línea y el texto del h1 */
+    border-bottom: 1px solid #4e4747; 
+    margin-bottom: 10px; 
+    padding-bottom: 5px; 
   }
 
   
@@ -96,7 +98,31 @@ strong {
     transition: background-color 0.3s ease;
 }
 
-/* Estilo del botón en hover */
+
 .botonGenerar:hover {
-    background-color: gray/* Nuevo color al pasar el mouse */
+    background-color: gray
 }
+
+
+.boton {
+    flex-direction: column;
+  }
+  
+  .boton-descarga {
+  
+    background-color:  #007bff; /* Color azul de fondo */
+    font-size: 20px;
+    color: white; /* Texto en color blanco */
+    padding: 10px 20px; /* Ajusta el espaciado interno según tus necesidades */
+    border: none; /* Quita el borde */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    display: block; /* Hace que el botón sea un elemento de bloque para centrarlo */
+    margin: 0 auto; /* Centra horizontalmente el botón */
+    transition: background-color 0.3s; /* Efecto de transición en el cambio de color de fondo */
+  }
+  
+  .boton-descarga:hover {
+    background-color: darkblue; /* Cambia el color de fondo en el hover */
+  }
+  

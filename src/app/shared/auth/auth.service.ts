@@ -5,6 +5,9 @@ import { Subject, observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  isLoggedIn() {
+    throw new Error('Method not implemented.');
+  }
   Authenticated(): boolean {
     throw new Error('Method not implemented.');
   }

@@ -1,12 +1,12 @@
 /* Estilos por defecto para pantallas más grandes (mayores de 800px) */
-.content-container {
+.content{
   margin-top: 100px;
   margin-bottom: 80px;
 }
 
 /* Estilos para pantallas entre 768px y 800px */
 @media screen and (min-width: 768px) and (max-width: 1000px) {
-  .content-container {
+  .content{
     margin-top: 150px;
     margin-bottom: 80px;
   }
@@ -14,7 +14,7 @@
 
 /* Estilos para pantallas más pequeñas (como dispositivos móviles) */
 @media screen and (max-width: 768px) {
-  .content-container {
+  .content{
     margin-top: 330px;
     margin-bottom: 80px;
   }
