@@ -1,22 +1,22 @@
 .exp-container {
-    background-color: #212121;
-    color: white;
-    height: 100vh;
+    background-color:white;
+    color: rgb(13, 12, 12);
     font-family: "Ubuntu", sans-serif;
   }
   
-  .header {
-    padding: 25px 20px;
-  }
+  .content-container {
+    max-width: auto;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(87, 136, 226); /* Cambiamos el color y el ancho del borde */
+    width: 90%;
+}
+
   
-  .header h3 {
-    border: 1px solid gray;
-    border-radius: 5px;
-    height: 50px;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-family: inherit;
-    margin: 0;
-  }
+h1{
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top:20px;
+}

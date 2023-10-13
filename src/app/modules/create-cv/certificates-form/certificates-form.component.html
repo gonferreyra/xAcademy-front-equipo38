@@ -16,17 +16,18 @@
       </div>
       <div *ngIf="ErrForm" class="msjError">Form invalid</div>
       <div class="btn-container">
-        <button (click)="save()"  [disabled]="form.invalid">Save</button>
+        <button (click)="save()"  [disabled]="form.invalid" >Save</button>
         <button (click)="cancel()">Cancel</button>
       </div>
      
     </form>
   </div>
   <div *ngIf="ErrFoot" >
+  
   <div class="footer">
     <ul>
       <li *ngFor = "let item of data; let i = index">
-            {{item.ce_training}} - {{item.ce_institution}} - {{item.ce_year}}
+        {{item.ce_training}} - {{item.ce_institution}} - {{item.ce_year}}
         <div>
           <button (click)="update(i)">update</button>
           <button (click)="delete(item.ce_id,i)">delete</button>
@@ -36,3 +37,4 @@
       <div *ngIf="ErrDel" class="msjError">couldn't  be deleted</div>
   </div>
 </div>
+

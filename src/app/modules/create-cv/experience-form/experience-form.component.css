@@ -3,6 +3,7 @@
     flex-direction: column;
     max-width: 750px;
     margin: 0px auto;
+    background-color: white; /* Establecemos el fondo blanco */
   }
   
 
@@ -52,6 +53,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     padding: 10px 20px;
+    background-color: white;
   }
   
   .footer ul li {

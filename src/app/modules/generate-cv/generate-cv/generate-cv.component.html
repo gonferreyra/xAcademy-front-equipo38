@@ -28,30 +28,29 @@
 
 <!-- EDUCACION -->
 
-<section>
+<section  >
   <h2 class="with-line">Educación</h2>
-
-<ul>
-  <li *ngFor="let item of dataEducation; let i = index">
-    <section *ngIf="item.ed_institution">
-      
-      <span class="fecha-recuadro">{{ item.ed_startDate | date: 'MMMM YYYY' }} / {{ item.ed_finishDate | date: 'MMMM YYYY' }}</span>
-          <h1 *ngIf="item.ed_startDate">{{ item.ed_institution }} </h1> 
-          <ul>
-            <li *ngIf="item.ed_formation">
-              <p >Titulo: {{ item.ed_formation }}</p>
-            </li>
-            <li *ngIf="item.ed_location">
-              <p >Ubicación: {{ item.ed_location }}</p> 
-            </li>
-          <li *ngIf="item.ed_description">
-              <p>{{ item.ed_description }}</p>
+  <ul>
+    <li  *ngFor="let item of dataEducation; let i = index">
+      <section *ngIf="item.ed_institution">
+        <span class="fecha-recuadro">{{ item.ed_startDate | date: 'MMMM YYYY' }} / {{ item.ed_finishDate | date: 'MMMM YYYY' }}</span>
+        <h1 *ngIf="item.ed_startDate">{{ item.ed_institution }}</h1>
+        <ul>
+          <li *ngIf="item.ed_formation">
+            <p>Título: {{ item.ed_formation }}</p>
           </li>
-          </ul>
+          <li *ngIf="item.ed_location">
+            <p>Ubicación: {{ item.ed_location }}</p>
+          </li>
+          <li *ngIf="item.ed_description">
+            <p>{{ item.ed_description }}</p>
+          </li>
+        </ul>
       </section>
-  </li>
-</ul>  
+    </li>
+  </ul>
 </section>
+
 <!-- EXPERIENCIA -->
 <section>
 <h2 class="with-line">Experiencia </h2>
