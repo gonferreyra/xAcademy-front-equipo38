@@ -9,10 +9,6 @@
    text-transform: capitalize;
 }
 
-body{
-   background-color: coral;
-   padding:20px;
-}
 
 .container{
    max-width: 1200px;

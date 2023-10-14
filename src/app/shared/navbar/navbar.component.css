@@ -53,22 +53,24 @@ img{
 .logo,
 .main-nav a {
 	padding-top: 13px;
-  padding-bottom: 13px;
+    padding-bottom: 13px;
 	text-transform: uppercase;
 	text-align: center;
 	display: block;
+	
  }
 .profile,
 .main-nav a {
   font-family: 'Ubuntu', sans-serif;
 	color: #ffffff;
-	font-size: .99em;
+	font-size: .98em;
   padding-right: 3rem;
 }
 
 .main-nav a:hover {
 	color:var(--blue);
-  
+	transform: scale(1.3); /* Aumenta la escala del elemento al hacer hover */
+	transition: transform 0.2s; /* Agrega una transición suave */
 }
 
 
