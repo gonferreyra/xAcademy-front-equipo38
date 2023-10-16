@@ -1,4 +1,3 @@
-
 .sidebar {
   padding: 10px; /* Espacio interior alrededor del contenido */
   width: 300px; /* Ancho deseado */
@@ -8,21 +7,19 @@
   margin-bottom: 50px;
 }
 
-
 .container {
   display: flex;
   justify-content: center; /* Centra horizontalmente los elementos hijos */
   align-items: center; /* Centra verticalmente los elementos hijos, si es necesario */
   height: 100vh; /* Opcional: Esto centra verticalmente si tienes suficiente altura en el contenedor principal */
   background-color: white; /* Establecemos el fondo blanco */
- 
 }
 
-.data{
+.data {
   display: flex;
   justify-content: center; /* Centra horizontalmente los elementos hijos */
   align-items: center; /* Centra verticalmente los elementos hijos, si es necesario */
-  height: 100vh; 
+  height: 100vh;
   border-color: #0f0f10;
 }
 /* Estilos para los enlaces de la barra lateral */
@@ -35,7 +32,7 @@
   font-size: 18px;
   color: #333;
   border: 1px solid rgb(37, 36, 36);
-  transition: font-size 0.2s, background-color 0.2s;
+  transition: all 0.3s, background-color 0.2s;
 }
 
 /* Efecto de aumento de la fuente al pasar el mouse */
