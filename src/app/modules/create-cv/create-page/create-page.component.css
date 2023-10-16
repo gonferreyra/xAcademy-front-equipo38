@@ -1,22 +1,22 @@
 .exp-container {
-    background-color:white;
-    color: rgb(13, 12, 12);
-    font-family: "Ubuntu", sans-serif;
-  }
-  
-  .content-container {
-    max-width: auto;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 10px;
-    border: 2px solid rgb(87, 136, 226); /* Cambiamos el color y el ancho del borde */
-    width: 90%;
+  background-color: white;
+  color: rgb(13, 12, 12);
+  font-family: "Ubuntu", sans-serif;
 }
 
-  
-h1{
+.content-container {
+  max-width: auto;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid rgb(87, 136, 226); /* Cambiamos el color y el ancho del borde */
+  width: 90%;
+  min-height: 70vh;
+}
+
+h1 {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 50px;
-  margin-top:20px;
+  margin-top: 20px;
 }
