@@ -1,12 +1,11 @@
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    max-width: 750px;
-    margin: 0px auto; /* Agregamos un margen de 20px en lugar de 0px */
-    background-color: white; /* Establecemos el fondo blanco */
-    padding: 20px; /* Agregamos un relleno para separar el contenido del borde */
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  margin: 0px auto; /* Agregamos un margen de 20px en lugar de 0px */
+  background-color: white; /* Establecemos el fondo blanco */
+  padding: 20px; /* Agregamos un relleno para separar el contenido del borde */
+}
 
 .btn-container button {
   background: none;
@@ -16,11 +15,17 @@
   font-size: inherit;
   padding: 5px;
   font-family: inherit;
+  transition: all 0.3s;
 }
 
+.btn-container .btn-save:hover {
+  background-color: var(--blue);
+  color: white;
+}
 
-.footer button:hover {
-  color: var(--blue);
+.btn-container .btn-cancel:hover {
+  background-color: red;
+  color: white;
 }
 
 .data {
@@ -43,16 +48,15 @@ textarea {
   border-radius: 5px;
   border: 1px solid gray;
 }
-.recuadro{
+.recuadro {
   border: 1px solid gray;
   border-radius: 10px;
-  margin-left:10px;
+  margin-left: 10px;
   background-color: blue;
-
 }
 .footer {
- margin-left: 10px;
- margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: white;
 }
 .footer ul {
@@ -79,6 +83,12 @@ textarea {
   color: inherit;
   font-size: inherit;
   padding: 5px 10px;
+  transition: all 0.3s;
+}
+
+.footer button:hover {
+  background-color: var(--blue);
+  color: white;
 }
 
 .btn-container {
@@ -89,14 +99,13 @@ textarea {
 }
 
 .btn-container button:disabled,
-.btn-container button[disabled]{
-border: 1px solid #999999;
-background-color: #cccccc;
-color: #666666;
+.btn-container button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
-
-.msjError{
+.msjError {
   color: rgb(255, 2, 2);
   text-align: center;
 }
@@ -109,7 +118,7 @@ color: #666666;
     padding-left: 35px;
     padding-right: 30px;
   }
-  
+
   .footer ul li {
     font-size: 18px;
   }

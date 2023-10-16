@@ -1,132 +1,141 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    max-width: 750px;
-    margin: 0px auto;
-    background-color: white; /* Establecemos el fondo blanco */
-    
-  }
-  
-  
-  .btn-container button {
-    background: none;
-    border-radius: 5px;
-    border: 1px solid gray;
-    color: inherit;
-    font-size: inherit;
-    padding: 5px;
-    font-family: inherit;
-  }
-  
- 
-  .footer button:hover {
-    color: var(--blue);
-  }
-  
-  .data {
-    margin: 10px;
-    padding: 25px 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .data-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 0px;
-    padding: 5px;
-  }
-  
-  .data-field input,
-  textarea {
-    min-width: 200px;
-    border-radius: 5px;
-    border: 1px solid gray;
-  }
-  
-  .footer {
-    padding: 25px 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  margin: 0px auto;
+  background-color: white; /* Establecemos el fondo blanco */
+}
 
-  .footer ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 10px 20px;
-  }
-  
-  .footer ul li {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .footer button {
-    background: none;
-    border-radius: 5px;
-    border: 1px solid gray;
-    color: inherit;
-    font-size: inherit;
-    padding: 5px 10px;
-  }
-  
-  .btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-  }
+.btn-container button {
+  background: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: inherit;
+  font-size: inherit;
+  padding: 5px;
+  font-family: inherit;
+  transition: all 0.3s;
+}
 
-  .btn-container button:disabled,
-  .btn-container button[disabled]{
+.btn-container .btn-save:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.btn-container .btn-cancel:hover {
+  background-color: red;
+  color: white;
+}
+
+.footer button:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.data {
+  margin: 10px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 0px;
+  padding: 5px;
+}
+
+.data-field input,
+textarea {
+  min-width: 200px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.footer {
+  padding: 25px 20px;
+}
+
+.footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.footer ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer button {
+  background: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: inherit;
+  font-size: inherit;
+  padding: 5px 10px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.btn-container button:disabled,
+.btn-container button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
 }
 
-  .msjError{
-    color: rgb(255, 2, 2);
-    text-align: center;
+.msjError {
+  color: rgb(255, 2, 2);
+  text-align: center;
+}
+.msjSave {
+  color: rgb(2, 255, 15);
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 18px;
+    padding-left: 35px;
+    padding-right: 30px;
   }
-  .msjSave{
-    color: rgb(2, 255, 15);
-    text-align: center;
+
+  .footer ul li {
+    font-size: 18px;
   }
-  
-  @media screen and (min-width: 768px) {
-    .container {
-      flex-direction: row;
-      justify-content: space-evenly;
-      font-size: 18px;
-      padding-left: 35px;
-      padding-right: 30px;
-    }
-    
-    .footer ul li {
-      font-size: 18px;
-    }
-    .footer button {
-      margin-left: 5px;
-    }
+  .footer button {
+    margin-left: 5px;
   }
-  
-  @media screen and (min-width: 1024px) {
-    .container {
-      max-width: 1100px;
-    }
-    .footer button {
-      margin-left: 15px;
-    }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1100px;
   }
-  
-  @media screen and (min-width: 1200px) {
-    .content-container {
-      max-width: 1200px;
-      margin: auto;
-    }
+  .footer button {
+    margin-left: 15px;
   }
+}
+
+@media screen and (min-width: 1200px) {
+  .content-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
