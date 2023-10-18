@@ -5,7 +5,13 @@
   margin: 0px auto;
   background-color: white; /* Establecemos el fondo blanco */
 }
-
+.title{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
 .btn-container button {
   background: none;
   border-radius: 5px;
@@ -39,6 +45,7 @@ textarea {
 }
 
 .footer {
+  margin-top: 50px;
   padding: 25px 20px;
 }
 .footer ul {
@@ -100,6 +107,10 @@ textarea {
 
 .msjError {
   color: rgb(255, 2, 2);
+  text-align: center;
+}
+.msjSave {
+  color: rgb(2, 255, 15);
   text-align: center;
 }
 

@@ -1,3 +1,6 @@
+<div class="title">
+  <h1>PERSONAL INFORMATION</h1>
+  </div>
 <div class="container">
   <app-sidebar></app-sidebar>
   <form class="data" [formGroup]="form">
@@ -25,6 +28,9 @@
       <input type="text" name="phone" formControlName="phone" />
     </div>
 
+    <div *ngIf="ErrForm" class="msjError">Form Invalid</div>
+    <div *ngIf="SvForm" class="msjSave">Form Save!</div>
+    
     <div class="btn-container">
       <button
         *ngIf="BttSave"
@@ -45,7 +51,6 @@
       <button (click)="cancel()" class="btn-cancel">Cancel</button>
     </div>
 
-    <div *ngIf="ErrForm" class="msjError">Form Invalid</div>
-    <div *ngIf="SvForm" class="msjSave">Form Save!</div>
+    
   </form>
 </div>

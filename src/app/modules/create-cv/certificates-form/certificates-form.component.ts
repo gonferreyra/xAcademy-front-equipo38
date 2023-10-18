@@ -18,6 +18,7 @@ export class CertificatesFormComponent implements OnInit {
   ErrForm:boolean = false;
   ErrDel:boolean = false;
   ErrFoot:boolean = true;
+  SvForm:boolean = false;
   id!: string;
   
   data = [{
@@ -76,6 +77,7 @@ export class CertificatesFormComponent implements OnInit {
     this.api.post("certificate/new/"+this.id,FormRaw).subscribe({
            next: (data:any) =>{
             this.ErrForm = false ;
+            this.SvForm = true;
             console.log(data.newCertificate);
             this.data.push(data.newCertificate);
           },
@@ -109,7 +111,7 @@ export class CertificatesFormComponent implements OnInit {
    this.form.setValue({
       training:this.data[id].ce_training,
       institution:this.data[id].ce_institution,
-      year: this.data[id].ce_year
+      year: this.data[id].ce_year.substring(0, 4)
     })
   }
 

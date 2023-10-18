@@ -1,3 +1,6 @@
+<div class="title">
+  <h1>CERTIFICATES</h1>
+  </div>
 <div class="container">
   <app-sidebar></app-sidebar>
   <form class="data" [formGroup]="form">
@@ -13,6 +16,7 @@
       <label for="year">Year</label>
       <input type="text" name="year" formControlName="year" />
     </div>
+    <div *ngIf="SvForm" class="msjSave">Form Save!</div>
     <div *ngIf="ErrForm" class="msjError">Form invalid</div>
     <div class="btn-container">
       <button (click)="save()" [disabled]="form.invalid" class="btn-save">
@@ -26,7 +30,7 @@
   <div class="footer">
     <ul>
       <li *ngFor="let item of data; let i = index">
-        {{ item.ce_training }} - {{ item.ce_institution }} - {{ item.ce_year }}
+        {{ item.ce_training }} - {{ item.ce_institution }} - {{ item.ce_year.substring(0, 4) }}
         <div>
           <button (click)="update(i)">update</button>
           <button (click)="delete(item.ce_id, i)">delete</button>

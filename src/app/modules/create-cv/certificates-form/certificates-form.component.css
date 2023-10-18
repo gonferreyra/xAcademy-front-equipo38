@@ -6,7 +6,13 @@
   background-color: white; /* Establecemos el fondo blanco */
   padding: 20px; /* Agregamos un relleno para separar el contenido del borde */
 }
-
+.title{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
 .btn-container button {
   background: none;
   border-radius: 5px;
@@ -55,6 +61,7 @@ textarea {
   background-color: blue;
 }
 .footer {
+  margin-top: 50px;
   margin-left: 10px;
   margin-right: 10px;
   background-color: white;
@@ -107,6 +114,10 @@ textarea {
 
 .msjError {
   color: rgb(255, 2, 2);
+  text-align: center;
+}
+.msjSave {
+  color: rgb(2, 255, 15);
   text-align: center;
 }
 

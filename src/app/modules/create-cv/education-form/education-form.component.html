@@ -1,3 +1,6 @@
+<div class="title">
+<h1>EDUCATION</h1>
+</div>
 <div class="container">
   <app-sidebar></app-sidebar>
   <form class="data" [formGroup]="form">
@@ -27,14 +30,15 @@
       <label for="description">Description</label>
       <input type="text" name="description" formControlName="description" />
     </div>
+    <div *ngIf="SvForm" class="msjSave">Form Save!</div>
+    <div *ngIf="ErrForm" class="msjError">Form invalid</div>
     <div class="btn-container">
       <button (click)="save()" [disabled]="form.invalid" class="btn-save">
         Save
       </button>
       <button (click)="cancel()" class="btn-cancel">Cancel</button>
     </div>
-
-    <div *ngIf="ErrForm" class="msjError">Form invalid</div>
+   
   </form>
 </div>
 <div *ngIf="ErrFoot">

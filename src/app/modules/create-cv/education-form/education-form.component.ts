@@ -21,6 +21,7 @@ export class EducationFormComponent implements OnInit {
   ErrForm:boolean = false;
   ErrDel:boolean = false;
   ErrFoot:boolean = true;
+  SvForm:boolean = false;
   id!: string;
   
   data = [{
@@ -85,10 +86,12 @@ export class EducationFormComponent implements OnInit {
     this.api.post("education/new/"+this.id,FormRaw).subscribe({
            next: (data:any) =>{
             this.ErrForm = false ;
+            this.SvForm = true ; 
             this.data.push(data.newEducation);
           },
            error: err =>{
-            this.ErrForm = true ; 
+            this.ErrForm = true ;
+           
           },
       });
   }

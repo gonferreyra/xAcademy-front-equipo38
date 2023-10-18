@@ -19,6 +19,7 @@ export class ExperienceFormComponent implements OnInit {
   ErrForm:boolean = false;
   ErrDel:boolean = false;
   ErrFoot:boolean = true;
+  SvForm:boolean = false;
   id!: string;
   
   data = [{
@@ -78,6 +79,7 @@ export class ExperienceFormComponent implements OnInit {
     this.api.post("experience/new/"+this.id,FormRaw).subscribe({
            next: (data:any) =>{
             this.ErrForm = false ;
+            this.SvForm = true;
             console.log(data.newExperience);
             this.data.push(data.newExperience);
           },

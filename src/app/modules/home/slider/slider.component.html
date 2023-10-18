@@ -1,27 +1,24 @@
-<div class="container">
-  
-    <ul class="slider">
-      <li id="step1">
-        <img src="https://cvmkr.com/images/slides/1.png"/>
-      </li>
-      <li id="step2">
-        <img src="https://cvmkr.com/images/slides/2.png"/>
-      </li>
-      <li id="step3">
-        <img src="https://cvmkr.com/images/slides/3.png"/>
-      </li>
-    </ul>
-    
-    <ul class="menu">
-      <li>
-        <a href="#step1">1</a>
-      </li>
-      <li>
-        <a href="#step2">2</a>
-      </li>
-       <li>
-        <a href="#step3">3</a>
-      </li>
-    </ul>
-    
-  </div>
+<ul class="slider">
+  <li id="step1" *ngIf="slide === 1">
+    <img src="../../../../assets/1.png"/>
+  </li>
+  <li id="step2" *ngIf="slide === 2">
+    <img src="../../../../assets/2.png"/>
+  </li>
+  <li id="step3" *ngIf="slide === 3">
+    <img src="../../../../assets/3.png"/>
+  </li>
+</ul>
+
+<ul class="menu">
+  <li (click)="updateSlide(1)">
+    <a>1</a>
+  </li>
+  <li (click)="updateSlide(2)">
+    <a>2</a>
+  </li>
+  <li (click)="updateSlide(3)">
+    <a>3</a>
+  </li>
+</ul>
+
