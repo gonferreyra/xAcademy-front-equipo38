@@ -1,0 +1,128 @@
+
+.vista{
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 95%;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+}
+
+header {
+    background-color: #007bff;
+    margin-top: 10px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+h1 {
+    margin:0;
+}
+
+section {
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: px;
+    border-color: #ccc;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px #ccc;
+}
+
+h2 {
+    font-size: 30px;
+    color: #007bff;
+}
+h3 {
+    font-size: 25px;
+    color: #1d2023;
+}
+p{
+    font-size: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong {
+    font-weight: bold;
+    border: #007bff;
+}
+
+.fecha-recuadro {
+    font-size: 20px;
+    font-style: italic;
+    float: right;
+    color: rgba(0, 0, 0, 0.733);
+    background-color: #b3a9a968;
+    border: 1px solid #b3a9a9; 
+    padding: 8px;
+    border-radius: 10px; 
+    text-align: center;
+    width: 320px;
+  }
+
+  .with-line {
+    border-bottom: 1px solid #4e4747; 
+    margin-bottom: 10px; 
+    padding-bottom: 5px; 
+  }
+
+  
+.seccion-botonGenerar {
+    width: 20%;
+    border-radius: 10px;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.botonGenerar {
+    background-color: #007bff;;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.botonGenerar:hover {
+    background-color: gray
+}
+
+
+.boton {
+    flex-direction: column;
+  }
+  
+  .boton-descarga {
+  
+    background-color:  #007bff; /* Color azul de fondo */
+    font-size: 20px;
+    color: white; /* Texto en color blanco */
+    padding: 10px 20px; /* Ajusta el espaciado interno según tus necesidades */
+    border: none; /* Quita el borde */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    display: block; /* Hace que el botón sea un elemento de bloque para centrarlo */
+    margin: 0 auto; /* Centra horizontalmente el botón */
+    transition: background-color 0.3s; /* Efecto de transición en el cambio de color de fondo */
+  }
+  
+  .boton-descarga:hover {
+    background-color: darkblue; /* Cambia el color de fondo en el hover */
+  }
+  

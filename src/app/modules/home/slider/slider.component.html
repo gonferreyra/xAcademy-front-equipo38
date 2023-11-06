@@ -1,0 +1,25 @@
+<ul class="slider">
+  <li id="step1" *ngIf="slide === 1">
+    <img src="../../../../assets/1.png"/>
+  </li>
+  <li id="step2" *ngIf="slide === 2">
+    <img src="../../../../assets/2.png"/>
+  </li>
+  <li id="step3" *ngIf="slide === 3">
+    <img src="../../../../assets/3.png"/>
+  </li>
+</ul>
+
+<ul class="menu">
+  <li (click)="updateSlide(1)">
+    <a>1</a>
+  </li>
+  <li (click)="updateSlide(2)">
+    <a>2</a>
+  </li>
+  <li (click)="updateSlide(3)">
+    <a>3</a>
+  </li>
+</ul>
+
+

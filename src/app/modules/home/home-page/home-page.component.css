@@ -1,0 +1,138 @@
+body{
+  font-family: 'Ubuntu', sans-serif;
+}
+/* Ajusta el margen superior del contenido para que empiece después de la barra de navegación */
+
+
+.conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.steps{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.text-butt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+/*===========================
+         Button
+============================*/
+.btn {
+  color: #0088ff;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  border: 2px solid #0088ff;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #0088ff;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 160%;
+}
+
+.step-img{
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+ /* Define la animación */
+ @keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Aplica la animación a las imágenes */
+.slide-img {
+  animation: slideAnimation 9s linear infinite; /* 9s = duración de la animación, puedes ajustarlo según lo desees */
+  width: 80%;
+  max-width: 80%;
+  height: auto;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+@media only screen and (min-width: 769px) {
+	.conteiner{
+    align-items: flex-start;
+  }
+	.slider{
+    
+  }
+	.step-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+  .step-img, 
+  img{
+    width: 100%;
+    object-fit: scale-down;
+    margin: 1% 5%;
+    }
+
+    .text-butt{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0% 10%;
+    }
+}
+
+/*@media only screen and (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.brand{
+		display: flex;
+		padding-left: 2rem;
+	  }
+}
+*/
+
